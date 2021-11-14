@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Table(name = "patient")
@@ -20,13 +21,13 @@ public class Patient {
     private String suburb;
     private String state;
     private int postcode;
-    private int phone;
+    private String phone;
 	
 	public Patient() {
 		
 	}
 	
-	public Patient(String firstname, String lastname, Date dob, String gender, String address, String suburb, String state, int postcode, int phone) {
+	public Patient(String firstname, String lastname, Date dob, String gender, String address, String suburb, String state, int postcode, String phone) {
 		this.firstname = firstname;
 		this.lastname = lastname;
         this.dob = dob;
@@ -43,7 +44,7 @@ public class Patient {
 	public int getPID() {
 		return pid;
 	}
-	public void setPID(int id) {
+	public void setPID(int pid) {
 		this.pid = pid;
 	}
 	
@@ -112,10 +113,10 @@ public class Patient {
 	}
 
     @Column(name = "phone", nullable = false)
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 

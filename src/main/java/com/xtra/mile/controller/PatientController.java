@@ -36,7 +36,7 @@ public class PatientController {
 	}
 
 	@GetMapping("/patient/{id}")
-	public ResponseEntity<Patient> getPatientById(@PathVariable(value = "id") int patientId)
+	public ResponseEntity<Patient> getPatientById(@PathVariable(value = "id") Long patientId)
 			throws ResourceNotFoundException {
                 Patient patient = patientRepository.findById(patientId)
 				.orElseThrow(() -> new ResourceNotFoundException("Patient not found for this id :: " + patientId));
@@ -49,7 +49,7 @@ public class PatientController {
 	}
 
 	@PutMapping("/patient/{id}")
-	public ResponseEntity<Patient> updatePatient(@PathVariable(value = "id") int patientId,
+	public ResponseEntity<Patient> updatePatient(@PathVariable(value = "id") Long patientId,
 			@Valid @RequestBody Patient patientDetails) throws ResourceNotFoundException {
                 Patient patient = patientRepository.findById(patientId)
 				.orElseThrow(() -> new ResourceNotFoundException("Patient not found for this id :: " + patientId));
@@ -62,7 +62,7 @@ public class PatientController {
 	}
 
 	@DeleteMapping("/patient/{id}")
-	public Map<String, Boolean> deletePatient(@PathVariable(value = "id") int patientId)
+	public Map<String, Boolean> deletePatient(@PathVariable(value = "id") Long patientId)
 			throws ResourceNotFoundException {
                 Patient patient = patientRepository.findById(patientId)
 				.orElseThrow(() -> new ResourceNotFoundException("Patient not found for this id :: " + patientId));
