@@ -20,14 +20,14 @@ public class Patient {
     private String address;
     private String suburb;
     private String state;
-    private int postcode;
+    private String postcode;
     private String phone;
 	
 	public Patient() {
 		
 	}
 	
-	public Patient(String firstname, String lastname, Date dob, String gender, String address, String suburb, String state, int postcode, String phone) {
+	public Patient(String firstname, String lastname, Date dob, String gender, String address, String suburb, String state, String postcode, String phone) {
 		this.firstname = firstname;
 		this.lastname = lastname;
         this.dob = dob;
@@ -105,10 +105,10 @@ public class Patient {
 	}
 	
 	@Column(name = "postcode", nullable = false)
-	public int getPostcode() {
+	public String getPostcode() {
 		return postcode;
 	}
-	public void setPostcode(int postcode) {
+	public void setPostcode(String postcode) {
 		this.postcode = postcode;
 	}
 

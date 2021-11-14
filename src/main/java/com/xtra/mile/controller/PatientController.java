@@ -30,7 +30,7 @@ public class PatientController {
 	@Autowired
 	private PatientRepository patientRepository;
 
-	@GetMapping("/patient")
+	@GetMapping("/patients")
 	public List<Patient> getAllPatients() {
 		return patientRepository.findAll();
 	}
